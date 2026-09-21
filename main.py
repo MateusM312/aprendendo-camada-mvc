@@ -6,8 +6,17 @@
 
 from fastapi import FastAPI
 from controller import router as aluno_router
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="API de alunos em uma escola - Exemplo para prova")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],       # em produção, restrinja a origens específicas
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(aluno_router)
 

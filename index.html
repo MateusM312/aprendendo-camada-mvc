@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secretaria — Alunos</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="pagina">
+
+  <header>
+    <h1>Secretaria escolar</h1>
+    <p>Cadastro e consulta de alunos</p>
+  </header>
+
+  <section>
+    <h2>Matricular novo aluno</h2>
+    <form id="form-criar">
+      <div>
+        <label for="c-nome">Nome</label>
+        <input type="text" id="c-nome" required>
+      </div>
+      <div>
+        <label for="c-idade">Idade</label>
+        <input type="number" id="c-idade" min="0" required>
+      </div>
+      <button type="submit">Matricular</button>
+    </form>
+    <div class="aviso" id="aviso-criar"></div>
+  </section>
+
+  <section>
+    <h2>Buscar aluno por ID</h2>
+    <div class="busca">
+      <input type="number" id="busca-id" min="1" placeholder="Número do ID">
+      <button type="button" class="secundario" id="btn-buscar">Buscar</button>
+    </div>
+    <div id="resultado-busca"></div>
+  </section>
+
+  <section>
+    <h2>Todos os alunos</h2>
+    <div id="lista-alunos" class="cartao">
+      <p class="vazio">Carregando…</p>
+    </div>
+  </section>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>
